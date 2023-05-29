@@ -1,8 +1,10 @@
 ## 汪文<span style="float:right;">开发/算法</span>
-***
-**性别**: 女 | **年龄**: 29| **民族**：汉 
 
-**Tel**: +86 18959209221 | **Email**: wwwangwenww@hotmail.com | **微信**：wwwangwenww
+---
+
+**性别**: 女 | **年龄**: 29| **民族**：汉
+
+**Tel**: +86 18959209221 | **Email**: <wwwangwenww@hotmail.com> | **微信**：wwwangwenww
 
  |     学校    |             专业            | 学位 |
  | :---------: | :------------------------: | :--: |
@@ -10,21 +12,27 @@
  |   厦门大学   |       计算机科学与技术       | 硕士 |
 
 ### 个人总结
+
 ---
+
 - 具有AI4SE/SE4AI, AI算法开发(NLP)，代码表示学习相关背景和落地经验(python)。
 - 具有一定编译器编程语言开发，llvm IR以及调试工具链开发经验(C++)。
 - 研究生阶段主要方向为推荐系统，链接预测, 具备相关的背景知识。
 - 具有良好的自我驱动能力和责任意识。
 
 ---
+
 ### 工作经历（2019-至今）
+
 ---
+
 #### <ins> 阿里云智能/基础设施/服务器/编译与异构计算<span>(2022.11~至今) </span> </ins>
+
 **AI基础设施** （大模型分布式模型推理）
 
-* 管控面（AIOps）：异构资源（GPU，PPU）在K8S中的上报（Device-Plugin），结合kubeDL（Controller-Manager）进行用户作业的抽象，定义了一整套CRD进行池化资源的管理。
-* 数据面：torch 分布式框架以及fasttransformer 分布式框架在大模型推理中的使用。
-* 算力推荐：进行用户画像分析，根据用户画像辅助调度系统进行模型混部。
+- 管控面（AIOps）：异构资源（GPU，PPU）在K8S中的上报（Device-Plugin），结合kubeDL（Controller-Manager）进行用户作业的抽象，定义了一整套CRD进行池化资源的管理。
+- 数据面：torch 分布式框架以及fasttransformer 分布式框架在大模型推理中的使用。
+- 算力推荐：进行用户画像分析，根据用户画像辅助调度系统进行模型混部。
 
 #### <ins> 华为/2012/中央软件院/编译器与编程语言实验室<span>(2020.08 ~至今)</span> </ins>
 
@@ -40,14 +48,12 @@
   
   - **MindSpore项目**:  集成智能补全和智能搜索等功能。将智能代码补全落地到MindSpore toolkit项目，已完成内部推广，商用版本发布。单一模型节省开发时间30%。
 
-
 - <ins> 鸿蒙项目代码行补全模型重构<span>(2022.04~2022.11)</span></ins>
 - 完成复旦合作项目原始代码补全模型（TF1.14，GGNN图模型）重构。
   
   - 使能模型并行训练，有效提升训练效率。并构建docker镜像。
   
 - 完成模型onnx转化以及部署。
-
 
 - <ins>编程语言大模型项目 <span> (2021.07~2022.02) </span></ins>
   - 代码生成式相关任务：完成GPT2, plbart,等模型在生成式任务上的实验及测试（包括对程序语言的预处理及编码等）。
@@ -65,7 +71,6 @@
   
   - **编译器中调试信息生成模块中Dwarf信息重构**。参与《xx编译器 DWARF调试信息转译》的特性开发，发现生成调试信息体积过大的原因，将so中dwarf信息体积缩小87%(debuginfo字段缩小82%，debugstr字段缩小93%)。独立完成了将xx编译器中mangled名称进行转换demangled的核心API。
 
-
 - <ins> XX编程语言<span>(2020.02~2020.08) </span> </ins>
 
     主要工作内容为编程语言LLVM IR中调试信息的生成，从编译器前端到编译器中端，协助SE进行xx语言IR调试信息生成的框架设计，打通xx语言编码程序的调试流程。
@@ -75,7 +80,6 @@
   - CodeGen模块重构后对调试信息进行两次重构。
   
   - 支撑xx语言AI代码（forknet）在带调试信息模式下的编译过程，保证其编译成功。
-
 
 - <ins> 软件IDE项目立项 <span>(2020.02~2020.08) </span> </ins>
 
@@ -88,7 +92,9 @@
   - **Debugging for AI**：调研AI调试过程中的相关工具。
   
 ---
+
 ### Publications
+
 ---
 [1]. X. Zeng, W. Wang, C. Chen and G. G. Yen, "A Consensus Community-Based Particle Swarm Optimization for Dynamic Community Detection," in *IEEE Transactions on Cybernetics*, vol. 50, no. 6, pp. 2502-2513, June 2020, doi: 10.1109/TCYB.2019.2938895. （**2020 IF= 11.079/Q1**，学生一作）
 
