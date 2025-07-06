@@ -1,6 +1,7 @@
 ## 汪文<span style="float:right;">开发/算法</span>
+---
 
-**性别**: 女 | **年龄**: 29| **民族**：汉
+**性别**: 女 | **年龄**: 31| **民族**：汉 
 
 **Tel**: +86 18959209221 |   **Email**: <wwwangwenww@hotmail.com>  |  **微信**：wwwangwenww
 
@@ -13,26 +14,34 @@
 ### 个人总结
 
 ---
-- 具备AI Infrastructure开发经验，熟悉AI训练/推理工作流。
-- 熟悉AI4SE/SE4AI, AI算法开发(NLP)，具备代码表示学习相关背景和落地经验(python)。
-- 参与编译器编程语言开发，具备llvm IR以及调试工具链开发经验(C++)。
-- 研究生阶段主要方向为推荐系统，链接预测, 具备相关的背景知识。
+- 具备AI Infra开发经验, 熟悉AI训练/推理工作流。
+- 熟悉AI4SE/SE4AI, AI算法开发(NLP), 具备程序语言生成（大模型）相关背景和落地经验(python)。
+- 参与过编译器编程语言开发, 具备llvm IR以及调试工具链开发经验(C++)。
 - 具有良好的自我驱动能力和责任意识。
 
 ---
 
 ### 工作经历（2019-至今）
-
 ---
+#### <ins>字节跳动 <span>(2023.11~至今) </span> </ins>
 
-#### <ins> 阿里云智能/基础设施/服务器/编译与异构计算<span>(2022.11~至今) </span> </ins>
+负责coze workflow 到flowlang（python-based）编译。
+
+#### <ins>自由量级 <span>(2023.09~2023.11) </span> </ins>
+**AI inference**
+
+负责大模型的推理优化，使用lmdeploy/tensorRT-llm 对大模型进行推理部署加速。使用continious batching等技术。
+
+#### <ins> 阿里云智能/基础设施/服务器/编译与异构计算<span>(2022.11~2023.06) </span> </ins>
 
 **AI基础设施** （大模型分布式模型推理）
 
-AI inference2.0
-- 管控面（AIOps）：通过定义一套算力原生CRDs，向上统一算力原生接口，屏蔽AI框架的差异；向下统一了资源的表达及其上报，屏蔽不同硬件及其虚拟化差异。通过CRD实例实现与pod的随航，能够建立pod间的CPU/GPU等网络的拓扑关系，实现更高的弹性伸缩能力、算力的智能适应和高可用。（包括异构资源（GPU，PPU）在K8S中的上报（Device-Plugin），结合kubeDL（Controller-Manager）进行用户作业的抽象，通过CRD进行池化资源的管理）。
-- 数据面：参与torch分布式框架的调研，以及fasttransformer分布式框架（mpi和Slurm场景）在大模型推理中的使用。对torchdynamo的相关调研。
-- 算力推荐：进行用户画像分析，根据用户画像辅助调度系统进行模型混部。
+**AI inference2.0**
+- 管控面（AIOps）：
+  - 项目开发：结合kubeDL（Controller-Manager）进行用户作业的抽象，除异构资源（GPU，PPU等）在K8S中的上报（Device-Plugins）外，进行虚拟算力设备的抽象定义，网络拓扑抽象。通过CRD进行池化资源的管理，结合虚拟化GPU设备能力，从而实现更好的弹性伸缩能力，解决CPU/GPU的灵活配比问题。
+  - **发明专利**：通过定义一套算力原生CRDs，向上统一算力原生接口，屏蔽AI框架的差异；向下统一了资源的表达及其上报，屏蔽不同硬件及其虚拟化差异。通过CRD实例实现与pod的随航，能够建立pod间的CPU/GPU等网络的拓扑关系，实现更高的弹性伸缩能力、算力的智能适应和高可用。
+ 
+- 数据面：参与torch分布式框架的调研，以及fasttransformer分布式框架（mpi和Slurm场景）在大模型推理中的使用。
 
 #### <ins> 华为/2012/中央软件院/编译器与编程语言实验室<span>(2020.08 ~2022.11)</span> </ins>
 
@@ -40,7 +49,7 @@ AI inference2.0
 
 - <ins>智能代码补全本地化模型<span>(2020.08 ~2022.11)</span> </ins>
 
-  **从0-1完成智能代码补全的原型实现。并主导其实际落地，和团队获得杭研所长奖-先锋奖。**
+ <font color=Sienna>**从0-1完成智能代码补全的原型实现。并主导其实际落地，和团队获得杭研所长奖-先锋奖。**</font>
 
   - **从0-1端到端完成智能代码补全的IDE模型到插件的原型构建**。包括程序语言tokenizer适配，选用transformer-XL模型进行模型训练和测试，IDE插件补全触发，利用grpc进行IDEA插件和模型通信间通信，模型从pth到onnx本地化部署和优化，以及时延和体验优化。
 
@@ -81,16 +90,6 @@ AI inference2.0
   
   - 支撑xx语言AI代码（forknet）在带调试信息模式下的编译过程，保证其编译成功。
 
-- <ins> 软件IDE项目立项 <span>(2020.02~2020.08) </span> </ins>
-
-  有效完成技术方向SE for AI和AI for SE的调研工作，支撑完成软件IDE项目立项工作。
-  
-  - **AI for SE**：充分调研当前流行的智慧化编程工具AIXCoder, tabNine, kite的功能全景，了解其功能特色发展历程，调研使用的机器学习模型及其模型规模，是否支持本地化推荐的代码补全。调研深度学习代码缺陷检查工具，了解其通过深度学习进行程序分析的基本流程。
-  
-  - **SE for AI**：调研各大机器学习模型平台如sagemaker等, 明确机器学习平台及IDE for AI的功能地图。
-  
-  - **Debugging for AI**：调研AI调试过程中的相关工具。
-  
 ---
 
 ### Publications
@@ -105,6 +104,6 @@ AI inference2.0
 基于链接预测的miRNA疾病相关性研究（通过神经网络的非线性特征提取来实现从不同的数据源构建的异构网络的邻域信息。然后更新节点嵌入。最后保持拓扑结构的node-embedding。应用保存网络拓扑结构的学习过程来加强所提取的Micro-RNA与疾病的特征表示，以匹配所观察的网络。）
 
 <style>
-ins {color: Sienna; font-weight: bold;font-size:16}
-span{float:right; border-bottom:1px Sienna}
+ins {color: Sienna; font-weight: bold; font-size:16}
+span {float:right; border-bottom:1px Sienna}
 </style>
