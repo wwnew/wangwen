@@ -24,6 +24,7 @@
 ### 工作经历（2019-至今）
 ---
 #### <ins>字节跳动 <span>(2023.11~至今) </span> </ins>
+**AI Platform/infra**
 
 负责coze workflow 到flowlang（python-based）编译。
 
