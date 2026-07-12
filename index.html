@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f3f0e8" />
+    <meta name="description" content="汪文的个人主页——专注 AI Infra、编译器与代码智能。" />
+    <meta property="og:title" content="汪文 | AI Infra · Compilers · Code Intelligence" />
+    <meta property="og:description" content="AI 基础设施、编译器与代码智能工程实践。" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://wwnew.github.io/wangwen/" />
+    <meta property="og:image" content="https://wwnew.github.io/wangwen/assets/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://wwnew.github.io/wangwen/assets/og.png" />
+    <title>汪文 | AI Infra · Compilers · Code Intelligence</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="返回首页">
+        <span class="brand-mark">WW</span>
+        <span class="brand-name">汪文</span>
+      </a>
+      <nav aria-label="主要导航">
+        <a href="#about">关于</a>
+        <a href="#experience">经历</a>
+        <a href="#research">研究</a>
+        <a href="#contact">联系</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="切换深浅色主题" aria-pressed="false">
+        <span aria-hidden="true">◐</span>
+      </button>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="status-dot"></span> AI ENGINEER · SHANGHAI / HANGZHOU</p>
+          <h1>
+            构建让 AI<br />
+            <span>稳定运行</span>的系统。
+          </h1>
+          <p class="hero-lead">
+            我是汪文，一名关注 <strong>AI Infra、编译器与代码智能</strong>的工程师。
+            我喜欢把复杂的模型、语言与算力问题，收敛成清晰、可靠、可落地的工程系统。
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#experience">查看经历 <span aria-hidden="true">↘</span></a>
+            <a class="button button-ghost" href="mailto:wwwangwenww@hotmail.com">与我联系</a>
+          </div>
+        </div>
+
+        <div class="hero-system reveal" aria-label="从代码到计算的系统示意图">
+          <div class="system-topline">
+            <span>SYSTEM PROFILE</span>
+            <span>06+ YRS</span>
+          </div>
+          <div class="pipeline" aria-hidden="true">
+            <div class="pipeline-label label-input">SOURCE</div>
+            <div class="pipeline-line line-a"></div>
+            <div class="pipeline-line line-b"></div>
+            <div class="pipeline-line line-c"></div>
+            <div class="pipeline-node node-a"><span>01</span>CODE</div>
+            <div class="pipeline-node node-b"><span>02</span>IR</div>
+            <div class="pipeline-node node-c"><span>03</span>MODEL</div>
+            <div class="pipeline-node node-d"><span>04</span>RUNTIME</div>
+            <div class="pipeline-signal signal-a"></div>
+            <div class="pipeline-signal signal-b"></div>
+            <div class="pipeline-signal signal-c"></div>
+          </div>
+          <div class="system-stack">
+            <div><span>FOCUS</span><strong>AI INFRA</strong></div>
+            <div><span>LANG</span><strong>PYTHON / C++</strong></div>
+            <div><span>MODE</span><strong>BUILD · SHIP · ITERATE</strong></div>
+          </div>
+        </div>
+
+        <div class="hero-stats reveal" aria-label="职业概览">
+          <div><strong>6+</strong><span>年工程实践</span></div>
+          <div><strong>0→1</strong><span>代码智能产品落地</span></div>
+          <div><strong>87%</strong><span>调试信息体积优化</span></div>
+          <div><strong>2</strong><span>篇国际期刊论文</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="about">
+        <div class="section-heading reveal">
+          <p class="section-index">01 / ABOUT</p>
+          <h2>跨越模型、语言<br />与基础设施</h2>
+        </div>
+        <div class="about-grid">
+          <p class="about-intro reveal">
+            我的工作路径从编译器和编程语言开始，走向 AI 软件工程、大模型推理与工作流编译。
+            这让我能同时理解上层产品体验与底层执行系统，并在二者之间搭桥。
+          </p>
+          <div class="capability-grid">
+            <article class="capability-card reveal">
+              <span class="card-no">A / 01</span>
+              <h3>AI Infrastructure</h3>
+              <p>训练与推理工作流、分布式推理、异构资源抽象、Kubernetes 资源编排与弹性伸缩。</p>
+              <ul><li>Kubernetes / CRD</li><li>Distributed Inference</li><li>TensorRT-LLM</li></ul>
+            </article>
+            <article class="capability-card reveal">
+              <span class="card-no">A / 02</span>
+              <h3>Code Intelligence</h3>
+              <p>从模型训练、ONNX 部署到 IDE 插件体验，构建端到端智能代码补全与搜索系统。</p>
+              <ul><li>Transformer</li><li>ONNX / gRPC</li><li>IDE Tooling</li></ul>
+            </article>
+            <article class="capability-card reveal">
+              <span class="card-no">A / 03</span>
+              <h3>Compilers</h3>
+              <p>编译器调试信息、LLVM IR、DWARF、语言类型系统与传统调试工具链适配。</p>
+              <ul><li>LLVM IR</li><li>DWARF / GDB</li><li>C++</li></ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section experience" id="experience">
+        <div class="section-heading reveal">
+          <p class="section-index">02 / EXPERIENCE</p>
+          <h2>工作经历</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item reveal">
+            <div class="timeline-meta"><time>2023.11 — 至今</time><span class="current">CURRENT</span></div>
+            <div class="timeline-main">
+              <h3>字节跳动</h3>
+              <p class="role">AI Platform / Infrastructure</p>
+              <p>负责 Coze Workflow 到 Flowlang（Python-based）的编译，将可视化工作流转换为稳定、可执行的语言与运行时表达。</p>
+            </div>
+            <div class="timeline-tags"><span>Workflow Compiler</span><span>Python</span><span>AI Platform</span></div>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="timeline-meta"><time>2023.09 — 2023.11</time></div>
+            <div class="timeline-main">
+              <h3>自由量级</h3>
+              <p class="role">AI Inference</p>
+              <p>使用 LMDeploy、TensorRT-LLM 与 Continuous Batching 等技术进行大模型部署与推理性能优化。</p>
+            </div>
+            <div class="timeline-tags"><span>TensorRT-LLM</span><span>LMDeploy</span><span>LLM Serving</span></div>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="timeline-meta"><time>2022.11 — 2023.06</time></div>
+            <div class="timeline-main">
+              <h3>阿里云智能</h3>
+              <p class="role">AI 基础设施 · 编译与异构计算</p>
+              <p>参与大模型分布式推理，围绕 Kubernetes、Device Plugin 与算力原生 CRD 建立异构资源、虚拟算力与网络拓扑抽象。</p>
+            </div>
+            <div class="timeline-tags"><span>Kubernetes</span><span>CRD</span><span>Distributed AI</span></div>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="timeline-meta"><time>2020.08 — 2022.11</time></div>
+            <div class="timeline-main">
+              <h3>华为 · 编译器与编程语言实验室</h3>
+              <p class="role">AI 软件工程 · 智能代码补全</p>
+              <p>从 0 到 1 完成智能代码补全原型并推动产品化，覆盖 tokenizer、模型训练、IDE 插件、gRPC 通信与 ONNX 本地部署。</p>
+              <p class="impact">典型场景开发效率提升 30%，项目获杭研所长奖先锋奖。</p>
+            </div>
+            <div class="timeline-tags"><span>Transformer-XL</span><span>ONNX</span><span>Code Search</span></div>
+          </article>
+          <article class="timeline-item reveal">
+            <div class="timeline-meta"><time>2019.07 — 2020.08</time></div>
+            <div class="timeline-main">
+              <h3>华为 · 编译器与编程语言实验室</h3>
+              <p class="role">编译器与编程语言 · 调试器</p>
+              <p>参与 Java 静态化调试、DWARF 调试信息重构及新语言 LLVM IR 调试信息生成，打通从前端到调试器的完整流程。</p>
+              <p class="impact">将生成的 SO 中 DWARF 信息体积缩小 87%。</p>
+            </div>
+            <div class="timeline-tags"><span>LLVM IR</span><span>DWARF</span><span>GDB / LLDB</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section research" id="research">
+        <div class="section-heading reveal">
+          <p class="section-index">03 / RESEARCH</p>
+          <h2>研究与教育</h2>
+        </div>
+        <div class="research-grid">
+          <article class="paper paper-featured reveal">
+            <div class="paper-top"><span>IEEE TRANSACTIONS ON CYBERNETICS</span><span>2020</span></div>
+            <h3>A Consensus Community-Based Particle Swarm Optimization for Dynamic Community Detection</h3>
+            <p>动态社区发现 · 粒子群优化 · 共识社区</p>
+            <a href="https://doi.org/10.1109/TCYB.2019.2938895" target="_blank" rel="noreferrer">查看 DOI <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="paper reveal">
+            <div class="paper-top"><span>MOLECULAR THERAPY — NUCLEIC ACIDS</span><span>2019</span></div>
+            <h3>Prediction of Potential Disease-Associated MicroRNAs by Using Neural Networks</h3>
+            <p>神经网络 · 链接预测 · 生物信息学</p>
+          </article>
+          <div class="education reveal">
+            <p class="mini-heading">EDUCATION</p>
+            <div><time>2016 — 2019</time><h3>厦门大学</h3><p>计算机科学与技术 · 工学硕士</p></div>
+            <div><time>2011 — 2015</time><h3>中国海洋大学</h3><p>计算机科学与技术（保密方向）· 工学学士</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact section" id="contact">
+        <p class="section-index reveal">04 / CONTACT</p>
+        <div class="contact-inner reveal">
+          <h2>一起构建<br /><span>真正可运行</span>的东西。</h2>
+          <div class="contact-side">
+            <p>如果你正在解决 AI Infra、模型推理、工作流编译或代码智能问题，欢迎交流。</p>
+            <a class="email-link" href="mailto:wwwangwenww@hotmail.com">wwwangwenww@hotmail.com <span aria-hidden="true">↗</span></a>
+            <a class="github-link" href="https://github.com/wwnew" target="_blank" rel="noreferrer">GitHub / wwnew <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> WANG WEN</span>
+      <span>AI INFRA · COMPILERS · CODE INTELLIGENCE</span>
+      <a href="#top">BACK TO TOP ↑</a>
+    </footer>
+  </body>
+</html>
