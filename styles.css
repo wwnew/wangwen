@@ -53,15 +53,21 @@ nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 42px); }
 nav a { position: relative; text-decoration: none; font-size: 12px; font-weight: 650; letter-spacing: 0.08em; }
 nav a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: -8px; height: 2px; background: var(--orange); transition: right 180ms ease; }
 nav a:hover::after, nav a:focus-visible::after { right: 0; }
-.theme-toggle { justify-self: end; width: 38px; height: 38px; border: 1px solid var(--line); background: transparent; color: inherit; cursor: pointer; font-size: 20px; }
-.theme-toggle:hover { background: var(--ink); color: var(--paper); }
+.header-actions { justify-self: end; display: flex; align-items: center; gap: 8px; }
+.lang-toggle, .theme-toggle { height: 38px; border: 1px solid var(--line); background: transparent; color: inherit; cursor: pointer; }
+.lang-toggle { min-width: 48px; padding: 0 10px; font: 700 11px/1 ui-monospace, monospace; letter-spacing: .06em; }
+.theme-toggle { width: 38px; font-size: 20px; }
+.lang-toggle:hover, .theme-toggle:hover { background: var(--ink); color: var(--paper); }
 
 .hero { min-height: calc(100svh - var(--header-height)); padding: clamp(48px, 8vw, 110px) clamp(20px, 4vw, 64px) 0; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(330px, 0.85fr); grid-template-rows: 1fr auto; gap: 54px clamp(32px, 7vw, 112px); overflow: hidden; }
 .eyebrow, .section-index, .mini-heading { font: 700 11px/1.3 ui-monospace, SFMono-Regular, Consolas, monospace; letter-spacing: 0.12em; }
 .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 clamp(28px, 5vw, 62px); color: var(--muted); }
 .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 5px color-mix(in srgb, var(--orange) 16%, transparent); }
-.hero h1 { margin: 0; max-width: 900px; font-size: clamp(58px, 7.4vw, 124px); line-height: 0.88; letter-spacing: -0.072em; font-weight: 850; }
+.hero h1 { margin: 0; max-width: 900px; font-size: clamp(50px, 6.2vw, 102px); line-height: 0.92; letter-spacing: -0.06em; font-weight: 850; }
 .hero h1 span { color: var(--blue); }
+html[data-language="zh"] .hero h1 { max-width: none; font-size: clamp(24px, 3.4vw, 48px); line-height: 1.12; letter-spacing: -0.045em; white-space: nowrap; }
+html[data-language="zh"] .hero h1 span { margin-left: .16em; }
+html[data-language="en"] .hero h1 { max-width: none; font-size: clamp(16px, 2.3vw, 38px); line-height: 1.1; letter-spacing: -0.045em; white-space: nowrap; }
 .hero-lead { max-width: 680px; margin: clamp(28px, 4vw, 48px) 0 0; font-size: clamp(16px, 1.35vw, 21px); line-height: 1.75; color: var(--muted); }
 .hero-lead strong { color: var(--ink); font-weight: 700; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
@@ -99,6 +105,8 @@ nav a:hover::after, nav a:focus-visible::after { right: 0; }
 .section-heading { display: grid; grid-template-columns: minmax(170px, .35fr) 1fr; margin-bottom: clamp(56px, 8vw, 110px); }
 .section-index { margin: 10px 0 0; color: var(--blue); }
 .section-heading h2 { margin: 0; font-size: clamp(48px, 7vw, 108px); line-height: .94; letter-spacing: -0.065em; }
+html[data-language="zh"] #about .section-heading h2 { font-size: clamp(22px, 3.6vw, 50px); line-height: 1.08; letter-spacing: -0.045em; white-space: nowrap; }
+html[data-language="en"] #about .section-heading h2 { font-size: clamp(18px, 2.7vw, 46px); line-height: 1.08; letter-spacing: -0.045em; white-space: nowrap; }
 .about-grid { display: grid; grid-template-columns: minmax(250px, .5fr) 1fr; gap: clamp(46px, 8vw, 120px); }
 .about-intro { margin: 0; max-width: 520px; font-size: clamp(20px, 2.2vw, 34px); line-height: 1.55; letter-spacing: -0.025em; }
 .capability-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
@@ -143,6 +151,9 @@ nav a:hover::after, nav a:focus-visible::after { right: 0; }
 .contact-inner { display: grid; grid-template-columns: 1.3fr .7fr; align-items: end; gap: 70px; margin-top: 70px; }
 .contact h2 { margin: 0; font-size: clamp(54px, 8.4vw, 136px); line-height: .85; letter-spacing: -0.07em; }
 .contact h2 span { color: var(--paper); }
+html[data-language="zh"] .contact h2 { font-size: clamp(24px, 4.1vw, 54px); line-height: 1.06; letter-spacing: -0.045em; white-space: nowrap; }
+html[data-language="zh"] .contact h2 span { margin-left: .18em; }
+html[data-language="en"] .contact h2 { font-size: clamp(16px, 2.5vw, 44px); line-height: 1.06; letter-spacing: -0.04em; white-space: nowrap; }
 .contact-side { padding-bottom: 8px; }
 .contact-side p { max-width: 480px; margin: 0 0 36px; font-size: 17px; line-height: 1.7; }
 .contact-side a { display: flex; justify-content: space-between; gap: 20px; padding: 18px 0; border-top: 1px solid rgba(17,19,17,.4); text-decoration: none; font-size: 13px; font-weight: 700; }
@@ -177,7 +188,8 @@ html[data-theme="dark"] .research { background: #111311; }
   .site-header { grid-template-columns: 1fr auto; }
   .brand-name, nav { display: none; }
   .hero { padding-top: 52px; gap: 42px; }
-  .hero h1 { font-size: clamp(55px, 17vw, 88px); }
+  .hero h1 { font-size: clamp(46px, 13vw, 72px); }
+  html[data-language="zh"] .hero h1 { font-size: clamp(22px, 6.2vw, 42px); }
   .hero-system { min-height: 430px; }
   .system-stack { grid-template-columns: 1fr 1fr; }
   .system-stack div:last-child { grid-column: 1 / -1; border-top: 1px solid #343735; }
