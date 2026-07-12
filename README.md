@@ -14,19 +14,26 @@
 ### 个人总结
 
 ---
-- 具备AI Infra开发经验, 熟悉AI训练/推理工作流。
-- 熟悉AI4SE/SE4AI, AI算法开发(NLP), 具备程序语言生成（大模型）相关背景和落地经验(python)。
-- 参与过编译器编程语言开发, 具备llvm IR以及调试工具链开发经验(C++)。
-- 具有良好的自我驱动能力和责任意识。
+- 具备 **Agent Infrastructure / AI Platform** 开发经验，近期主要聚焦 **Agent Harness、Agent Runtime** 及相关执行框架建设。
+- 具备从上层任务表达到底层执行系统的完整工程视角：覆盖 Workflow 编译、可执行代码生成、Agent 任务承载与运行时执行。
+- 熟悉 AI 训练与推理工作流、大模型推理部署及性能优化；具备 AI4SE / SE4AI、NLP 与代码大模型的研发和落地经验（Python）。
+- 具备编译器与编程语言开发背景，熟悉 LLVM IR、DWARF 及调试工具链（C++），能够将编译技术应用于 AI 工作流和 Agent 系统。
+- 具有良好的自我驱动能力、跨层问题分析能力和工程落地意识。
 
 ---
 
 ### 工作经历（2019-至今）
 ---
 #### <ins>字节跳动 <span>(2023.11~至今) </span> </ins>
-**AI Platform/infra**
+**Agent Infrastructure / AI Platform**
 
-负责coze workflow 到flowlang（python-based）编译。
+- **Workflow 编译**：负责 Coze Workflow 到 Flowlang（Python-based）的编译，将上层 Workflow 的节点、依赖关系与执行逻辑转换为可运行的代码表达，打通产品侧任务编排与底层执行环境。
+
+- **Agent Harness（近半年重点）**：围绕 Agent 任务的执行入口与承载框架开展建设，抽象 Agent 任务生命周期、上下文交互与工具调用流程，为不同 Agent 能力提供相对统一的接入和执行方式。
+
+- **Agent Runtime（近半年重点）**：参与 Agent 运行时建设，重点关注多步骤任务的执行编排、状态流转、异常处理与可扩展性，支撑 Agent 任务在实际业务环境中的稳定运行。
+
+- **技术主线**：工作内容从 Workflow 编译自然延伸到 Agent 执行基础设施——先将 Workflow / Agent Task 转换为可执行表达，再由 Harness 完成任务承载与能力接入，最终由 Runtime 负责执行过程与生命周期管理，形成“**高层任务语义 → 可执行代码 → Agent Harness → Agent Runtime**”的完整链路。
 
 #### <ins>自由量级 <span>(2023.09~2023.11) </span> </ins>
 **AI inference**
