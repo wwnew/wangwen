@@ -1,4 +1,4 @@
-## 汪文<span style="float:right;">开发/算法</span>
+## 汪文<span style="float:right;">Agent Harness / Agent Infrastructure</span>
 ---
 
 **性别**: 女 | **年龄**: 31| **民族**：汉 
@@ -14,102 +14,93 @@
 ### 个人总结
 
 ---
-- 具备 **Agent Infrastructure / AI Platform** 开发经验，近期主要聚焦 **Agent Harness、Agent Runtime** 及相关执行框架建设。
-- 具备从上层任务表达到底层执行系统的完整工程视角：覆盖 Workflow 编译、可执行代码生成、Agent 任务承载与运行时执行。
-- 熟悉 AI 训练与推理工作流、大模型推理部署及性能优化；具备 AI4SE / SE4AI、NLP 与代码大模型的研发和落地经验（Python）。
-- 具备编译器与编程语言开发背景，熟悉 LLVM IR、DWARF 及调试工具链（C++），能够将编译技术应用于 AI 工作流和 Agent 系统。
-- 具有良好的自我驱动能力、跨层问题分析能力和工程落地意识。
+- 2019 年起从事编译器、代码智能与 AI 基础设施研发。近一年在字节跳动主要从事 **Agent Runtime** 开发，完成 **工具调用效果优化、上下文压缩策略与模型切换管理** 的线上落地。
+- 此前负责 Coze Workflow 到 Flowlang 的编译与代码生成，具备从任务表达、可执行代码到 Agent 运行时的工程经验。
+- 曾从 **0 到 1** 完成智能代码补全原型并主导产品落地，覆盖模型训练、推理部署与 IDE 集成，应用于 HMS SmartCoder 和 MindSpore Toolkit。
+- 具备 **Python / C++** 开发背景，以及大模型推理、异构算力管理和编译器调试工具链经验；曾将生成共享库中的 **DWARF 调试信息体积缩小 87%**。
 
 ---
 
 ### 工作经历（2019-至今）
+
 ---
-#### <ins>字节跳动 <span>(2023.11~至今) </span> </ins>
+
+#### <ins>字节跳动 <span>(2023.11~至今)</span></ins>
+
 **Agent Infrastructure / AI Platform**
 
-- **Workflow 编译**：负责 Coze Workflow 到 Flowlang（Python-based）的编译，将上层 Workflow 的节点、依赖关系与执行逻辑转换为可运行的代码表达，打通产品侧任务编排与底层执行环境。
+<ins>Agent Harness <span>(近一年)</span></ins>
 
-- **Agent Harness（近半年重点）**：围绕 Agent 任务的执行入口与承载框架开展建设，抽象 Agent 任务生命周期、上下文交互与工具调用流程，为不同 Agent 能力提供相对统一的接入和执行方式。
+重点为 Agent Runtime 开发，围绕任务执行、工具调用、上下文管理与模型切换完善 Agent 执行框架。
 
-- **Agent Runtime（近半年重点）**：参与 Agent 运行时建设，重点关注多步骤任务的执行编排、状态流转、异常处理与可扩展性，支撑 Agent 任务在实际业务环境中的稳定运行。
+- **工具调用效果优化**：参与运行时的工具调用流程与能力接入建设，完成工具调用效果优化并上线。
+- **上下文管理与压缩**：完成 Agent 上下文压缩策略的开发与上线；对比不同 Agent 的压缩方案，研究摘要放置位置、消息语义保留，以及压缩对缓存的影响。
+- **模型切换管理**：完成 Agent Runtime 中模型切换管理能力的开发与上线。
 
-- **技术主线**：工作内容从 Workflow 编译自然延伸到 Agent 执行基础设施——先将 Workflow / Agent Task 转换为可执行表达，再由 Harness 完成任务承载与能力接入，最终由 Runtime 负责执行过程与生命周期管理，形成“**高层任务语义 → 可执行代码 → Agent Harness → Agent Runtime**”的完整链路。
+<ins>Workflow <span>(2023/11-2026/01)</span></ins>
 
-#### <ins>自由量级 <span>(2023.09~2023.11) </span> </ins>
-**AI inference**
+- **Workflow 编译**：负责 Coze Workflow 到 Flowlang（Python-based）的编译，将 Workflow 节点、依赖关系与执行逻辑转换为可运行代码，连接产品侧任务编排与底层执行环境。
 
-负责大模型的推理优化，使用lmdeploy/tensorRT-llm 对大模型进行推理部署加速。使用continious batching等技术。
+#### <ins>自由量级 <span>(2023.09~2023.11)</span></ins>
 
-#### <ins> 阿里云智能/基础设施/服务器/编译与异构计算<span>(2022.11~2023.06) </span> </ins>
+**AI Inference**
 
-**AI基础设施** （大模型分布式模型推理）
+- 负责大模型部署与推理优化，使用 LMDeploy、TensorRT-LLM 及 Continuous Batching 等技术进行推理加速。
 
-**AI inference2.0**
-- 管控面（AIOps）：
-  - 项目开发：结合kubeDL（Controller-Manager）进行用户作业的抽象，除异构资源（GPU，PPU等）在K8S中的上报（Device-Plugins）外，进行虚拟算力设备的抽象定义，网络拓扑抽象。通过CRD进行池化资源的管理，结合虚拟化GPU设备能力，从而实现更好的弹性伸缩能力，解决CPU/GPU的灵活配比问题。
-  - **发明专利**：通过定义一套算力原生CRDs，向上统一算力原生接口，屏蔽AI框架的差异；向下统一了资源的表达及其上报，屏蔽不同硬件及其虚拟化差异。通过CRD实例实现与pod的随航，能够建立pod间的CPU/GPU等网络的拓扑关系，实现更高的弹性伸缩能力、算力的智能适应和高可用。
- 
-- 数据面：参与torch分布式框架的调研，以及fasttransformer分布式框架（mpi和Slurm场景）在大模型推理中的使用。
+#### <ins>阿里云智能/基础设施/服务器/编译与异构计算 <span>(2022.11~2023.06)</span></ins>
 
-#### <ins> 华为/2012/中央软件院/编译器与编程语言实验室<span>(2020.08 ~2022.11)</span> </ins>
+**AI 基础设施（大模型分布式推理）**
 
-**AI软件工程（智能代码补全）**
+**AI Inference 2.0**
 
-- <ins>智能代码补全本地化模型<span>(2020.08 ~2022.11)</span> </ins>
+- **异构资源管理**：参与 AI Inference 2.0 管控面开发，基于 KubeDL Controller Manager、Kubernetes Device Plugin 与 CRD，抽象用户作业、异构设备、虚拟算力及网络拓扑，支持池化资源管理与 CPU/GPU 灵活配比。
+- **算力原生接口**：参与算力原生 CRD 设计，统一 AI 框架接口及不同硬件、虚拟化资源的表达与上报；关联 Pod 与算力资源，描述跨 Pod 的 CPU/GPU 网络拓扑。相关工作涉及发明专利。
+- **分布式推理**：参与 PyTorch 分布式框架调研，以及 MPI / Slurm 场景下的分布式大模型推理实践。
 
- <font color=Sienna>**从0-1完成智能代码补全的原型实现。并主导其实际落地，和团队获得杭研所长奖-先锋奖。**</font>
+#### <ins>华为/2012/中央软件院/编译器与编程语言实验室 <span>(2020.08~2022.11)</span></ins>
 
-  - **从0-1端到端完成智能代码补全的IDE模型到插件的原型构建**。包括程序语言tokenizer适配，选用transformer-XL模型进行模型训练和测试，IDE插件补全触发，利用grpc进行IDEA插件和模型通信间通信，模型从pth到onnx本地化部署和优化，以及时延和体验优化。
+**AI 软件工程（智能代码补全）**
 
-  - **HMS SmartCoder项目**:  包括智能辅助编程以及代码搜索，片段推荐等功能。其中主要负责将智能代码补全落地到hms5.1，hms6.0，典型场景提升开发效率30%。
-  
-  - **MindSpore项目**:  集成智能补全和智能搜索等功能。将智能代码补全落地到MindSpore toolkit项目，已完成内部推广，商用版本发布。单一模型节省开发时间30%。
+<ins>智能代码补全本地化模型 <span>(2020.08~2022.11)</span></ins>
 
-- <ins> 鸿蒙项目代码行补全模型重构<span>(2022.04~2022.11)</span></ins>
-- 完成复旦合作项目原始代码补全模型（TF1.14，GGNN图模型）重构。
-  
-  - 使能模型并行训练，有效提升训练效率。并构建docker镜像。
-  
-- 完成模型onnx转化以及部署。
+- **智能代码补全产品化**：从 0 到 1 完成原型并主导实际落地，覆盖程序语言 Tokenizer 适配、Transformer-XL 模型训练与测试、IDEA 插件补全触发、gRPC 通信及 ONNX 本地部署优化；与团队获得杭研所长奖—先锋奖。
+- **HMS SmartCoder**：负责智能代码补全在 HMS 5.1、6.0 中的落地，典型场景开发效率提升 **30%**。
+- **MindSpore Toolkit**：推动智能代码补全落地，完成内部推广及商用版本发布；单一模型节省开发时间 **30%**。
 
-- <ins>编程语言大模型项目 <span> (2021.07~2022.07) </span></ins>
-  - 代码生成式相关任务：完成plbart, gpt2, codeparrot等模型在生成式任务上的实验及测试（包括对程序语言的预处理及编码等）。
-  
-  - 调研tree-sitter语言解析工具：工具使用及其对代码结构信息的提取效率。分析在构建代码表示模型时与IDEA PSI的效率差异。
-  
-  - 代码搜索任务：代码搜索模型，利用milvus完成特定领域（代码搜索）的搜索服务demo构建。
+<ins>鸿蒙项目代码行补全模型重构 <span>(2022.04~2022.11)</span></ins>
 
-#### <ins> 华为/2012/中央软件院/编译器与编程语言实验室<span>(2019.07 ~2020.08) </span> </ins>
+- **代码补全模型重构**：重构基于 TensorFlow 1.14 / GGNN 的代码行补全模型，支持模型并行训练，完成 Docker 镜像构建、ONNX 转换与部署。
 
-**编译器与编程语言开发（调试器相关)**
+<ins>编程语言大模型项目 <span>(2021.07~2022.07)</span></ins>
 
-- <ins> XX编译器<span>(2019.07~2020.02) </span> </ins>
-  - **使能xx编译器Java的静态化调试**。Java被xx编译器静态化编译后，通常需要借助于传统的静态化调试工具gdb或者lldb进行调试。gdb/lldb本身不支持Java，不认识xxIR；gdb/lldb不识别xx的内存模型；所以需要分析xx编译器内存模型，新增gdb命令，适配maple模型。
-  
-  - **编译器中调试信息生成模块中Dwarf信息重构**。参与《xx编译器 DWARF调试信息转译》的特性开发，发现生成调试信息体积过大的原因，将so中dwarf信息体积缩小87%(debuginfo字段缩小82%，debugstr字段缩小93%)。独立完成了将xx编译器中mangled名称进行转换demangled的核心API。
+- **代码生成与搜索**：完成 PLBART、GPT-2、CodeParrot 等模型的代码生成任务实验；比较 tree-sitter 与 IDEA PSI 的代码结构提取效率，并基于 Milvus 构建代码搜索服务原型。
 
-- <ins> XX编程语言<span>(2020.02~2020.08) </span> </ins>
+#### <ins>华为/2012/中央软件院/编译器与编程语言实验室 <span>(2019.07~2020.08)</span></ins>
 
-    主要工作内容为编程语言LLVM IR中调试信息的生成，从编译器前端到编译器中端，协助SE进行xx语言IR调试信息生成的框架设计，打通xx语言编码程序的调试流程。
+**编译器与编程语言开发（调试器相关）**
 
-  - 作为主要开发者，进行xx语言IR调试信息生成的特性开发。完成基本类型调试信息的生成；打通复合类型(String, Function, Record, Tuple)xx语言IR调试信息的生成流程；还包括控制语句(if, else ,while)以及引用类型(Class, Array)类型的IR的调试信息生成。使能ImportModule。支撑Enum类型，和lambda表达式调试信息的生成。
-  
-  - CodeGen模块重构后对调试信息进行两次重构。
-  
-  - 支撑xx语言AI代码（forknet）在带调试信息模式下的编译过程，保证其编译成功。
+<ins>XX 编译器 <span>(2019.07~2020.02)</span></ins>
+
+- **调试信息体积优化**：参与编译器 DWARF 调试信息生成模块重构，定位体积过大的原因，将生成共享库中的 DWARF 信息体积缩小 **87%**；独立完成符号名称反修饰（Demangling）核心 API。
+- **Java 静态编译调试**：分析静态编译器的内存模型，扩展 GDB 命令，适配编译后的对象布局与调试需求，支持 Java 程序的静态编译调试。
+
+<ins>XX 编程语言 <span>(2020.02~2020.08)</span></ins>
+
+- **新语言调试支持**：作为主要开发者参与 LLVM IR 调试信息生成框架与特性开发，覆盖基本与复合类型、引用类型、控制语句、模块导入、枚举和 Lambda；完成 CodeGen 重构后的适配，打通从编译器前端到调试器的调试链路。
 
 ---
 
 ### Publications
 
 ---
-[1]. X. Zeng, W. Wang, C. Chen and G. G. Yen, "A Consensus Community-Based Particle Swarm Optimization for Dynamic Community Detection," in *IEEE Transactions on Cybernetics*, vol. 50, no. 6, pp. 2502-2513, June 2020, doi: 10.1109/TCYB.2019.2938895. （**2020 IF= 11.079/Q1**，学生一作）
+
+[1]. X. Zeng, W. Wang, C. Chen and G. G. Yen. "A Consensus Community-Based Particle Swarm Optimization for Dynamic Community Detection." *IEEE Transactions on Cybernetics*, 50(6): 2502–2513, 2020. DOI: [10.1109/TCYB.2019.2938895](https://doi.org/10.1109/TCYB.2019.2938895)。（学生一作）
 
 基于共识社区的动态网络社区发现
 
-[2] .X. Zeng, W. Wang, G. Deng, J. Bing, Q. Zou. Prediction of Potential Disease-Associated MicroRNAs by Using Neural Networks[J]. Molecular Therapy - Nucleic Acids. 2019.16:566 – 575. ISSN 2162-2531. （中科院二区，学生一作）
+[2]. X. Zeng, W. Wang, G. Deng, J. Bing, Q. Zou. "Prediction of Potential Disease-Associated MicroRNAs by Using Neural Networks." *Molecular Therapy — Nucleic Acids*, 16: 566–575, 2019。（学生一作）
 
-基于链接预测的miRNA疾病相关性研究（通过神经网络的非线性特征提取来实现从不同的数据源构建的异构网络的邻域信息。然后更新节点嵌入。最后保持拓扑结构的node-embedding。应用保存网络拓扑结构的学习过程来加强所提取的Micro-RNA与疾病的特征表示，以匹配所观察的网络。）
+神经网络与 miRNA 疾病关联预测
 
 <style>
 ins {color: Sienna; font-weight: bold; font-size:16}

@@ -25,9 +25,10 @@ jobs:
       - name: Prepare static site
         shell: bash
         run: |
-          mkdir -p _site/assets
-          cp index.html styles.css script.js .nojekyll _site/
+          mkdir -p _site/assets/vendor
+          cp index.html styles.css script.js resume.html resume.css resume.js README.md .nojekyll _site/
           cp assets/og.png _site/assets/og.png
+          cp assets/vendor/marked.esm.js assets/vendor/marked-LICENSE.md _site/assets/vendor/
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v5
         with:

@@ -3,24 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#f3f0e8" />
-    <meta name="description" content="汪文的个人主页——专注 Agent Infrastructure、编译器与代码智能。" />
-    <meta property="og:title" content="汪文 | Agent Infrastructure · Compilers · Code Intelligence" />
-    <meta property="og:description" content="从 Workflow 编译到 Agent Harness 与 Agent Runtime 的工程实践。" />
+    <meta name="theme-color" content="#f7f6f2" />
+    <meta name="description" content="汪文的个人主页：Agent Harness / Runtime、工具调用优化、上下文压缩与模型切换管理，以及 Workflow 编译与代码智能实践。" />
+    <meta property="og:title" content="汪文 | Agent Harness · Runtime · 编译器" />
+    <meta property="og:description" content="Agent Runtime 工程实践：工具调用效果优化、上下文压缩策略与模型切换管理。" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://wwnew.github.io/wangwen/" />
     <meta property="og:image" content="https://wwnew.github.io/wangwen/assets/og.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://wwnew.github.io/wangwen/assets/og.png" />
-    <title>汪文 | Agent Infrastructure · Compilers · Code Intelligence</title>
+    <title>汪文 | Agent Harness · Runtime · 编译器</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#main">跳到主要内容</a>
+    <a class="skip-link" href="#main" data-i18n="skipLink">跳到主要内容</a>
 
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="返回首页">
+      <a class="brand" href="#top" aria-label="返回首页" data-i18n-aria="homeLabel">
         <span class="brand-mark">WW</span>
         <span class="brand-name">汪文</span>
       </a>
@@ -31,6 +31,7 @@
         <a href="#contact" data-i18n="navContact">联系</a>
       </nav>
       <div class="header-actions">
+        <a class="resume-link" href="resume.html"><span data-i18n="navResume">简历</span><span aria-hidden="true">→</span></a>
         <button class="lang-toggle" type="button" aria-label="Switch to English">EN</button>
         <button class="theme-toggle" type="button" aria-label="切换深浅色主题" data-i18n-aria="themeLabel" aria-pressed="false">
           <span aria-hidden="true">◐</span>
@@ -41,42 +42,36 @@
     <main id="main">
       <section class="hero" id="top">
         <div class="hero-copy reveal">
-          <p class="eyebrow"><span class="status-dot"></span><span data-i18n="eyebrow">AI 工程师 · 上海 / 杭州</span></p>
+          <p class="eyebrow"><span class="status-dot"></span><span data-i18n="eyebrow">AGENT HARNESS / RUNTIME · 上海 / 杭州</span></p>
           <h1 data-i18n-html="heroTitle">让 Agent 的每一步<span>运行得更稳</span></h1>
-          <p class="hero-lead" data-i18n-html="heroLead">从编译器、代码智能到大模型推理，我的工作始终围绕一个问题展开：怎样把复杂能力变成可靠的工程系统。现在，我主要投入 <strong>Agent Harness 与 Agent Runtime</strong>，让任务从表达、编译到执行形成完整链路。</p>
+          <p class="hero-lead" data-i18n-html="heroLead">我主要从事 <strong>Agent Runtime</strong> 开发，已上线工具调用效果优化、上下文压缩策略与模型切换管理。此前负责 Workflow 编译，并有编译器开发与代码智能产品落地经验。</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#experience"><span data-i18n="viewExperience">查看经历</span> <span aria-hidden="true">↘</span></a>
-            <a class="button button-ghost" href="mailto:wwwangwenww@hotmail.com" data-i18n="contactMe">与我联系</a>
+            <a class="button button-primary" href="resume.html"><span data-i18n="viewResume">预览完整简历</span><span aria-hidden="true">→</span></a>
+            <a class="button button-ghost" href="#experience"><span data-i18n="viewExperience">查看经历</span><span aria-hidden="true">↘</span></a>
           </div>
+          <p class="resume-note"><span data-i18n="resumeNote">站内直接阅读 · 中文简历</span><a href="README.md" download="Wang-Wen-Resume.md" data-i18n="downloadResume">下载 .md</a></p>
         </div>
 
-        <div class="hero-system reveal" aria-label="从代码到计算的系统示意图">
+        <div class="hero-system reveal" aria-label="Agent 执行框架的能力概览" data-i18n-aria="systemLabel">
           <div class="system-topline">
-            <span data-i18n="systemProfile">系统概览</span>
-            <span>06+ YRS</span>
+            <span data-i18n="systemProfile">当前工作</span>
+            <span>BYTEDANCE</span>
           </div>
-          <div class="pipeline" aria-hidden="true">
-            <div class="pipeline-label label-input" data-i18n="sourceLabel">任务输入</div>
-            <div class="pipeline-line line-a"></div>
-            <div class="pipeline-line line-b"></div>
-            <div class="pipeline-line line-c"></div>
-            <div class="pipeline-node node-a"><span>01</span>TASK</div>
-            <div class="pipeline-node node-b"><span>02</span>CODE</div>
-            <div class="pipeline-node node-c"><span>03</span>HARNESS</div>
-            <div class="pipeline-node node-d"><span>04</span>RUNTIME</div>
-            <div class="pipeline-signal signal-a"></div>
-            <div class="pipeline-signal signal-b"></div>
-            <div class="pipeline-signal signal-c"></div>
+          <div class="system-focus">
+            <p>AGENT INFRASTRUCTURE</p>
+            <h2>Agent Harness<span>/ Runtime</span></h2>
+            <p data-i18n="systemIntro">从执行框架到具体能力，关注 Agent 如何完成实际任务。</p>
           </div>
-          <div class="system-stack">
-            <div><span data-i18n="focusLabel">方向</span><strong>AGENT INFRA</strong></div>
-            <div><span data-i18n="langLabel">语言</span><strong>PYTHON / C++</strong></div>
-            <div><span data-i18n="modeLabel">链路</span><strong>COMPILE · HARNESS · RUN</strong></div>
-          </div>
+          <ol class="focus-list">
+            <li><span class="focus-number">01</span><div><h3 data-i18n="focusTools">工具调用</h3><p data-i18n="focusToolsText">调用流程与效果优化</p></div><span class="live-tag" data-i18n="inProduction">已上线</span></li>
+            <li><span class="focus-number">02</span><div><h3 data-i18n="focusContext">上下文压缩</h3><p data-i18n="focusContextText">压缩策略与上下文管理</p></div><span class="live-tag" data-i18n="inProduction">已上线</span></li>
+            <li><span class="focus-number">03</span><div><h3 data-i18n="focusModels">模型切换</h3><p data-i18n="focusModelsText">运行时模型切换管理</p></div><span class="live-tag" data-i18n="inProduction">已上线</span></li>
+          </ol>
+          <div class="system-footer"><span>PYTHON / C++</span><span>WORKFLOW → RUNTIME</span></div>
         </div>
 
-        <div class="hero-stats reveal" aria-label="职业概览">
-          <div><strong>6+</strong><span data-i18n="statYears">年工程实践</span></div>
+        <div class="hero-stats reveal" aria-label="职业概览" data-i18n-aria="statsLabel">
+          <div><strong>2019</strong><span data-i18n="statYears">工程实践起点</span></div>
           <div><strong>0→1</strong><span data-i18n="statProduct">代码智能产品落地</span></div>
           <div><strong>87%</strong><span data-i18n="statOptimize">调试信息体积优化</span></div>
           <div><strong>2</strong><span data-i18n="statPapers">篇国际期刊论文</span></div>
@@ -89,13 +84,13 @@
           <h2 data-i18n-html="aboutTitle">从编译器走向 Agent 运行时</h2>
         </div>
         <div class="about-grid">
-          <p class="about-intro reveal" data-i18n="aboutIntro">我的经历看起来跨了几个方向，但核心一直没有变：理解一项复杂能力如何被表达、被转换，最后在真实环境里稳定执行。从编译器到 Agent Runtime，这条线也逐渐变得完整。</p>
+          <p class="about-intro reveal" data-i18n="aboutIntro">从编译器调试工具链、智能代码补全，到 Workflow 编译与 Agent Runtime，我的工作逐步走向 Agent 执行框架。现在的重点是工具调用、上下文压缩和模型切换管理，让这些能力在实际任务中发挥作用。</p>
           <div class="capability-grid">
             <article class="capability-card reveal">
               <span class="card-no">A / 01</span>
-              <h3 data-i18n="capAgentTitle">Agent 基础设施</h3>
-              <p data-i18n="capAgentText">从 Workflow 编译到 Agent Harness 与 Runtime，连接任务表达、可执行代码、能力接入与运行时生命周期。</p>
-              <ul><li>Agent Harness</li><li>Agent Runtime</li><li>Workflow Compiler</li></ul>
+              <h3 data-i18n="capAgentTitle">Agent Harness</h3>
+              <p data-i18n="capAgentText">基于 Agent Runtime 开展工具调用效果优化、上下文压缩策略与模型切换管理，相关能力已上线。</p>
+              <ul><li>Tool Calling</li><li>Context Management</li><li>Model Switching</li></ul>
             </article>
             <article class="capability-card reveal">
               <span class="card-no">A / 02</span>
@@ -119,14 +114,28 @@
           <h2 data-i18n="experienceTitle">工作经历</h2>
         </div>
         <div class="timeline">
-          <article class="timeline-item reveal">
+          <article class="timeline-item timeline-item-featured reveal">
             <div class="timeline-meta"><time data-i18n="dateByteDance">2023.11 — 至今</time><span class="current" data-i18n="current">现在</span></div>
             <div class="timeline-main">
               <h3 data-i18n="companyByteDance">字节跳动</h3>
               <p class="role">Agent Infrastructure / AI Platform</p>
-              <p data-i18n-html="byteDanceText"><strong>Workflow 编译：</strong>负责 Coze Workflow 到 Flowlang（Python-based）的编译，将上层节点、依赖关系与执行逻辑转换为可运行的代码表达。近半年工作重点转向 <strong>Agent Harness 与 Agent Runtime</strong>，围绕 Agent 任务承载、能力接入、执行编排与生命周期管理开展建设，将既有的编译链路进一步延伸为从高层任务语义到稳定运行时的完整执行基础设施。</p>
+              <div class="project-list">
+                <section class="project-block" aria-labelledby="harness-project">
+                  <div class="project-heading"><h4 id="harness-project">Agent Harness</h4><span data-i18n="harnessPeriod">近一年</span></div>
+                  <p data-i18n="harnessIntro">主要从事 Agent Runtime 开发，围绕任务执行、工具调用、上下文管理与模型切换完善 Agent 执行框架。</p>
+                  <ul class="project-points">
+                    <li data-i18n-html="harnessTools"><strong>工具调用效果优化</strong>：参与工具调用流程与能力接入建设，相关优化已上线。</li>
+                    <li data-i18n-html="harnessContext"><strong>上下文压缩策略</strong>：完成策略开发与上线，并研究摘要位置、消息语义保留及缓存影响。</li>
+                    <li data-i18n-html="harnessModels"><strong>模型切换管理</strong>：完成 Agent Runtime 中模型切换管理能力的开发与上线。</li>
+                  </ul>
+                </section>
+                <section class="project-block" aria-labelledby="workflow-project">
+                  <div class="project-heading"><h4 id="workflow-project">Workflow</h4><span data-i18n="workflowPeriod">入职初期</span></div>
+                  <p data-i18n="workflowText">负责 Coze Workflow 到 Flowlang（Python-based）的编译，将节点、依赖关系与执行逻辑转换为可运行代码，连接产品侧任务编排与底层执行环境。</p>
+                </section>
+              </div>
             </div>
-            <div class="timeline-tags"><span>Workflow Compiler</span><span>Agent Harness</span><span>Agent Runtime</span></div>
+            <div class="timeline-tags"><span>Agent Harness</span><span>Agent Runtime</span><span>Workflow Compiler</span></div>
           </article>
           <article class="timeline-item reveal">
             <div class="timeline-meta"><time>2023.09 — 2023.11</time></div>
@@ -199,7 +208,8 @@
         <div class="contact-inner reveal">
           <h2 data-i18n-html="contactTitle">一起把复杂的事<span>做得可靠</span></h2>
           <div class="contact-side">
-            <p data-i18n="contactText">如果你也在关注 Agent Harness、Agent Runtime、Workflow 编译或代码智能，欢迎来聊聊正在解决的问题。</p>
+            <p data-i18n="contactText">欢迎交流 Agent Harness、工具调用、上下文管理与 Agent Runtime 相关的工作机会和技术问题。</p>
+            <a class="resume-contact" href="resume.html"><span data-i18n="viewResume">预览完整简历</span><span aria-hidden="true">→</span></a>
             <a class="email-link" href="mailto:wwwangwenww@hotmail.com">wwwangwenww@hotmail.com <span aria-hidden="true">↗</span></a>
             <a class="github-link" href="https://github.com/wwnew" target="_blank" rel="noreferrer">GitHub / wwnew <span aria-hidden="true">↗</span></a>
           </div>
@@ -209,7 +219,7 @@
 
     <footer>
       <span>© <span id="year"></span> WANG WEN</span>
-      <span>AGENT INFRA · COMPILERS · CODE INTELLIGENCE</span>
+      <span>AGENT HARNESS · RUNTIME · COMPILERS</span>
       <a href="#top" data-i18n="backToTop">返回顶部 ↑</a>
     </footer>
   </body>
