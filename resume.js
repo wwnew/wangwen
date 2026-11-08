@@ -6,23 +6,35 @@ const printButton = document.querySelector('#print-resume');
 
 function formatPersonalDetails(document) {
   const groups = [
-    { labels: ['性别', '年龄', '民族'], className: 'resume-personal-details', title: '基本信息' },
-    { labels: ['Tel', 'Email', '微信'], className: 'resume-contact-details', title: '联系方式' },
+    { labels: ['性别', '年龄', '民族'], className: 'resume-personal-details' },
+    { labels: ['Tel', 'Email', '微信'], className: 'resume-contact-details' },
   ];
   const displayLabels = { Tel: '电话', Email: '邮箱' };
+  const details = document.createElement('table');
+  details.className = 'resume-details';
+  details.setAttribute('aria-label', '基本信息与联系方式');
+  const columns = document.createElement('colgroup');
+  for (let index = 0; index < 6; index += 1) {
+    const column = document.createElement('col');
+    if (index % 2 === 0) column.className = 'detail-label-column';
+    if (index === 3) column.className = 'detail-email-column';
+    columns.append(column);
+  }
+  const body = document.createElement('tbody');
+  details.append(columns, body);
 
   document.querySelectorAll('body > p').forEach((paragraph) => {
     const labels = [...paragraph.children].filter((element) => element.tagName === 'STRONG');
     const group = groups.find(({ labels: names }) => names.length === labels.length && names.every((name, index) => labels[index].textContent === name));
     if (!group) return;
 
-    const details = document.createElement('dl');
-    details.className = `resume-details ${group.className}`;
-    details.setAttribute('aria-label', group.title);
+    const row = document.createElement('tr');
+    row.className = group.className;
     labels.forEach((label, index) => {
-      const field = document.createElement('div');
-      const term = document.createElement('dt');
-      const value = document.createElement('dd');
+      const term = document.createElement('th');
+      const value = document.createElement('td');
+      term.id = `${group.className}-${index}`;
+      value.setAttribute('headers', term.id);
       term.textContent = displayLabels[label.textContent] || label.textContent;
       for (let node = label.nextSibling; node && node !== labels[index + 1]; node = node.nextSibling) {
         const copy = node.cloneNode(true);
@@ -31,10 +43,11 @@ function formatPersonalDetails(document) {
         }
         value.append(copy);
       }
-      field.append(term, value);
-      details.append(field);
+      row.append(term, value);
     });
-    paragraph.replaceWith(details);
+    body.append(row);
+    if (details.isConnected) paragraph.remove();
+    else paragraph.replaceWith(details);
   });
 }
 
