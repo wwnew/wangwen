@@ -4,6 +4,40 @@ const status = document.querySelector('#resume-status');
 const retry = document.querySelector('#retry-resume');
 const printButton = document.querySelector('#print-resume');
 
+function formatPersonalDetails(document) {
+  const groups = [
+    { labels: ['性别', '年龄', '民族'], className: 'resume-personal-details', title: '基本信息' },
+    { labels: ['Tel', 'Email', '微信'], className: 'resume-contact-details', title: '联系方式' },
+  ];
+  const displayLabels = { Tel: '电话', Email: '邮箱' };
+
+  document.querySelectorAll('body > p').forEach((paragraph) => {
+    const labels = [...paragraph.children].filter((element) => element.tagName === 'STRONG');
+    const group = groups.find(({ labels: names }) => names.length === labels.length && names.every((name, index) => labels[index].textContent === name));
+    if (!group) return;
+
+    const details = document.createElement('dl');
+    details.className = `resume-details ${group.className}`;
+    details.setAttribute('aria-label', group.title);
+    labels.forEach((label, index) => {
+      const field = document.createElement('div');
+      const term = document.createElement('dt');
+      const value = document.createElement('dd');
+      term.textContent = displayLabels[label.textContent] || label.textContent;
+      for (let node = label.nextSibling; node && node !== labels[index + 1]; node = node.nextSibling) {
+        const copy = node.cloneNode(true);
+        if (copy.nodeType === Node.TEXT_NODE) {
+          copy.textContent = copy.textContent.replace(/^[\s:：]+/, '').replace(/[\s|]+$/, '');
+        }
+        value.append(copy);
+      }
+      field.append(term, value);
+      details.append(field);
+    });
+    paragraph.replaceWith(details);
+  });
+}
+
 async function loadResume() {
   retry.hidden = true;
   status.textContent = '正在加载简历…';
@@ -21,6 +55,7 @@ async function loadResume() {
     // Its global span/ins style must not affect the surrounding page controls.
     parsed.querySelectorAll('style').forEach((element) => element.remove());
     parsed.querySelectorAll('[style]').forEach((element) => element.removeAttribute('style'));
+    formatPersonalDetails(parsed);
     parsed.querySelectorAll('a[href^="https://"]').forEach((link) => {
       link.target = '_blank';
       link.rel = 'noopener noreferrer';

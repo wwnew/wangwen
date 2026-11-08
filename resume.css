@@ -33,6 +33,12 @@ main { padding: 34px 24px 24px; }
 .resume-document h3 + hr { margin-top: 7px; }
 .resume-document p { margin: 12px 0; }
 .resume-document strong { font-weight: 650; }
+.resume-document .resume-details { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr) minmax(0, 1fr); column-gap: 20px; row-gap: 10px; margin: 12px 0; }
+.resume-details > div { display: flex; align-items: baseline; gap: 9px; min-width: 0; }
+.resume-details dt { flex-shrink: 0; color: var(--muted); font-size: 11px; font-weight: 400; }
+.resume-details dd { min-width: 0; margin: 0; color: var(--ink); font-size: 13px; font-variant-numeric: tabular-nums; }
+.resume-contact-details a { color: var(--ink); text-decoration: none; }
+.resume-contact-details a:hover { color: var(--blue); text-decoration: underline; }
 .resume-document ul { padding-left: 21px; margin: 12px 0 20px; }
 .resume-document li { margin: 7px 0; padding-left: 2px; }
 .resume-document ins { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 18px; color: sienna; font-weight: 650; font-size: 15px; text-decoration: underline; text-underline-offset: 3px; }
@@ -52,6 +58,9 @@ main { padding: 34px 24px 24px; }
   .resume-document h2 { font-size: 24px; gap: 6px 15px; }
   .resume-document h2 span { font-size: 12px; }
   .resume-document h3 { font-size: 17px; }
+  .resume-document .resume-personal-details { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 12px; }
+  .resume-document .resume-contact-details { grid-template-columns: 1fr; row-gap: 8px; margin-top: 16px; }
+  .resume-contact-details dt { flex-basis: 30px; }
   .resume-document ins { font-size: 14px; }
   .resume-document ins > span { font-size: 12px; }
   .resume-document table { font-size: 11px; }
@@ -71,6 +80,7 @@ main { padding: 34px 24px 24px; }
   .resume-document ins { font-size: 11pt; }
   .resume-document ins > span { font-size: 9pt; }
   .resume-document table { font-size: 9pt; }
+  .resume-details { break-inside: avoid; }
   .resume-document h2, .resume-document h3, .resume-document h4, .resume-document p:has(> ins), .resume-document hr { break-after: avoid; }
   .resume-document tr, .resume-document li { break-inside: avoid; }
   .resume-document p { orphans: 3; widows: 3; }
